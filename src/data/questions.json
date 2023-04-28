@@ -1,0 +1,49 @@
+import type { iQuestion } from '@/interfaces/questions.interface';
+
+export const questions: iQuestion[] = [
+    {
+        description: '¿Cuál es el operador de igualdad estricta en TypeScript?',
+        answers: ['==', '===', '=', '!='],
+        correctAnswer: 1
+    },
+    {
+        description: '¿Qué es un tipo de datos en TypeScript?',
+        answers: [
+            'Una función que devuelve un valor',
+            'Una variable que almacena un valor',
+            'Una descripción de la forma que debe tener un valor',
+            'Un operador que compara dos valores'
+        ],
+        correctAnswer: 2
+    },
+    {
+        description: '¿Qué es un decorador en TypeScript?',
+        answers: [
+            'Una función que modifica el comportamiento de una clase o método',
+            'Una variable que almacena un valor',
+            'Un tipo de datos que describe la forma que debe tener un valor',
+            'Un operador que compara dos valores'
+        ],
+        correctAnswer: 0
+    },
+    {
+        description: '¿Qué es una interfaz en TypeScript?',
+        answers: [
+            'Una función que modifica el comportamiento de una clase o método',
+            'Una variable que almacena un valor',
+            'Un tipo de datos que describe la forma que debe tener un valor',
+            'Un operador que compara dos valores'
+        ],
+        correctAnswer: 2
+    },
+    {
+        description: '¿Qué es un módulo en TypeScript?',
+        answers: [
+            'Una función que modifica el comportamiento de una clase o método',
+            'Una variable que almacena un valor',
+            'Una descripción de la forma que debe tener un valor',
+            'Una agrupación de código que puede ser reutilizado en diferentes partes de una aplicación'
+        ],
+        correctAnswer: 3
+    }
+];
