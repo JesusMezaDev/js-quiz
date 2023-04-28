@@ -7,7 +7,7 @@
                 </div>
                 <div class="card-body">
                     <code v-if="currentQuestionInfo.code">
-                        <pre class="m-3">{{ currentQuestionInfo.code }}</pre>
+                        <pre class="m-3" style="font-size: 16px;">{{ currentQuestionInfo.code }}</pre>
                     </code>
                     <div class="list-group text-center">
                         <button
