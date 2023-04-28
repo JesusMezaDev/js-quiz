@@ -1,3 +1,4 @@
+import { ref, watch } from 'vue';
 import { storeToRefs } from 'pinia';
 
 import { useQuestionStore } from '@/stores/question.store';
@@ -5,17 +6,26 @@ import { useQuestionStore } from '@/stores/question.store';
 export const useQuestionsData = () => {
     const { questions } = storeToRefs(useQuestionStore());
 
-    let correctAnswers = 0;
-    let incorrectAnswers = 0;
-    let unanswered = 0;
+    let correctAnswers = ref<number>(0);
+    let incorrectAnswers = ref<number>(0);
+    let unanswered = ref<number>(0);
 
-    questions.value.forEach(question => {
-        const { userAnswer, correctAnswer } = question;
-        if (userAnswer == null) unanswered++;
-        else if (userAnswer === correctAnswer) correctAnswers++;
-        else incorrectAnswers++;
-    
-    });
+    watch(
+        () => questions.value,
+        (newQuestions) => {
+            correctAnswers.value = 0;
+            incorrectAnswers.value = 0;
+            unanswered.value = 0;
+            
+            newQuestions.forEach(question => {
+                const { userAnswer, correctAnswer } = question;
+                if (userAnswer == null) unanswered.value++;
+                else if (userAnswer === correctAnswer) correctAnswers.value++;
+                else incorrectAnswers.value++;
+            
+            });
+        }
+    );
 
     return {
         correctAnswers,

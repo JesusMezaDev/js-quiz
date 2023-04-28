@@ -35,7 +35,6 @@ export const useQuestionStore = defineStore('questions', () => {
             questions.value = newQuestions;
         },
         nextQuestion: () => {
-            console.log("preguntas", questions.value.length);
             const nextQuestion = currentQuestion.value + 1;
             if (nextQuestion <= questions.value.length) currentQuestion.value = nextQuestion;
         },

@@ -4,13 +4,13 @@
             <nav>
                 <ul class="pagination">
                     <li class="page-item" :class="{ disabled: currentQuestion === 1 }">
-                        <a class="page-link" href="#" @click.prevent="prevQuestion()">Previous</a>
+                        <a class="page-link" href="#" @click.prevent="prevQuestion()">Anterior</a>
                     </li>
                     <li class="page-item disabled ms-3 me-3">
                         <a class="page-link" href="#">Pregunta actual: {{ currentQuestion }}</a>
                     </li>
                     <li class="page-item" :class="{ disabled: currentQuestion === questions.length }">
-                        <a class="page-link" href="#" @click.prevent="nextQuestion()">Next</a>
+                        <a class="page-link" href="#" @click.prevent="nextQuestion()">Siguiente</a>
                     </li>
                 </ul>
             </nav>
